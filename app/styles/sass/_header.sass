@@ -1,0 +1,85 @@
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+
+body
+  background-color: black
+  color: white
+  font-size: $index
+  font-family: death-note
+  line-height: 1.75
+  height: $depth
+  font-weight: 300
+
+.wrapper
+	width: 100%
+	height: 100%
+	position: fixed
+	perspective: 1500px
+
+.gallery 
+	transform-style: preserve-3d
+	height: 100%
+
+.frame
+  width: 100%
+  height: 100%
+  position: absolute
+  display: flex
+  align-items: center
+  justify-content: center
+  transition: $transition,opacity .75s ease
+  will-change: transform
+  transform-style: preserve-3d
+  h2
+    text-align: center
+    font-size: calc( (1vw + 1vh) * 3.3 )
+  h3
+    font-size: calc( (1vw + 1vh) * 3 )
+  p
+    max-width: 30vw
+    margin-top: 3vh
+    font-size: calc( (1vw + 1vh) * 2 )
+  &--bg
+    background-color: rgb(0, 0, 0 /.87)
+
+h1,h2,h3,h4
+  font-weight: 100
+  text-transform: uppercase 
+
+.frame-media
+  position: relative
+  width: calc( ((1vw + 1vh)) * 26 )
+  height: calc( ((1vw + 1vh)) * 36 )
+  background-position: center
+  background-size: cover
+  &--left
+    right: calc( 26 / 2 * (1vw + 1vh) + 30px )
+  &--right
+    left: calc( 26 / 2 * (1vw + 1vh) + 30px )
+
+video.frame-media
+  width: calc( ((1vw + 1vh)) * 36 )
+  height: calc( ((1vw + 1vh)) * 26 )
+  &--right
+    left: calc( 36 / 2 * (1vw + 1vh) + 30px)
+  &--left
+    right: calc( 36 / 2 * (1vw + 1vh) + 30px)
+
+.text-right > *
+  position: relative
+  left: 18vw
+
+.soundbutton 
+	position: fixed
+	bottom: 5vh
+	right: 5vw
+	cursor: pointer
+	width: 24px
+	transition: .25s ease
+
+.soundbutton.paused 
+	opacity: .25
+
